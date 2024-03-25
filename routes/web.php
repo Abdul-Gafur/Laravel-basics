@@ -6,9 +6,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzers', function () {
-     
-    return view('pizzers', ['type' => 'hawawiian', 'base' => 'cheesy crust']);
-});
 
-// Route::view('/pizzers', 'pizzers', ['name' => 'Abdul']);
+// Required parameters
+// Route::get('/pizzers/{pizzer_name}', function (string $pizzer_name) {
+     
+//     return view('pizzers', ['name' => $pizzer_name, 'base' => 'cheesy crust']);
+// });
+
+// Short hand route
+Route::view('/pizzers', 'pizzers', ['name' => 'Abdul']);
+
+
+// Optional parameters
+Route::get('/pizzers/{pizzer_name?}', function (string $pizzer_name = null) {
+    return view('pizzers', ['name' => $pizzer_name ]);
+});
