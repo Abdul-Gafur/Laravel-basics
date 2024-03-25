@@ -10,3 +10,5 @@ Route::get('/pizzers', function () {
      
     return view('pizzers', ['type' => 'hawawiian', 'base' => 'cheesy crust']);
 });
+
+// Route::view('/pizzers', 'pizzers', ['name' => 'Abdul']);
